@@ -1,0 +1,3 @@
+ATBrackeys. "CharacterController2D.cs". 23 Jul. 2018, 
+	https://github.com/Brackeys/2D-Character-Controller/blob/master/CharacterController2D.cs. 
+	Accessed on 8 May 2020.
