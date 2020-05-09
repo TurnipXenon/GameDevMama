@@ -18,17 +18,33 @@ public class UIPanel : MonoBehaviour
     public Animator animator;
 
     private String _sentences;
+    private bool _isShown = false;
 
     public void Show()
     {
+        if (_isShown)
+        {
+            return;
+        }
+        
         textDialog.text = "";
         animator.SetTrigger(ANIM_PARAM_SHOW);
+
+        _isShown = true;
     }
 
     public void Hide()
     {
+        if (!_isShown)
+        {
+            return;
+        }
+        
+        StopAllCoroutines();
         textDialog.text = "";
         animator.SetTrigger(ANIM_PARAM_HIDE);
+
+        _isShown = false;
     }
 
     public void DisplayDialog(Dialog dialog)

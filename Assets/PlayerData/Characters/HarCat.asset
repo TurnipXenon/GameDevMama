@@ -13,8 +13,37 @@ MonoBehaviour:
   m_Name: HarCat
   m_EditorClassIdentifier: 
   name: HarCat
-  sprite: {fileID: 0}
-  introduction:
-  - sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: cfca8df737e4d3c42bf9bb1ba02571fb, type: 3}
+  defaultLine:
+  - sprite: {fileID: 21300000, guid: cfca8df737e4d3c42bf9bb1ba02571fb, type: 3}
     name: HarCat
-    sentences: Hi! I'm HarCat!
+    sentences: 'Ya feeling jazzy? Need some
+
+      pineapple juice? Need some les
+
+      jus
+      de tomate?'
+  introduction:
+  - sprite: {fileID: 21300000, guid: cfca8df737e4d3c42bf9bb1ba02571fb, type: 3}
+    name: HarCat
+    sentences: 'Hi! I''m HarCat! I''m the best
+
+      Jazz player in the house.'
+  - sprite: {fileID: 21300000, guid: cfca8df737e4d3c42bf9bb1ba02571fb, type: 3}
+    name: HarCat
+    sentences: 'Well.. Nobody that I know of plays
+
+      the sax...'
+  - sprite: {fileID: 21300000, guid: cfca8df737e4d3c42bf9bb1ba02571fb, type: 3}
+    name: HarCat
+    sentences: 'Nevertheless! You got the best in your hand!
+
+      You''ll feel
+      comfy by my sidey~
+
+      We''ll play the sax all night!'
+  - sprite: {fileID: 21300000, guid: cfca8df737e4d3c42bf9bb1ba02571fb, type: 3}
+    name: HarCat
+    sentences: 'Do you wanna be the catnip to
+
+      this jazzy cat?'

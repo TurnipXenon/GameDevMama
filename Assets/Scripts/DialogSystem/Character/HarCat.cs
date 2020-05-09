@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -6,11 +7,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Dialog/HarCat", order = 1)]
 public class HarCat : CodingMamaCharacter
 {
-
+    public List<Dialog> defaultLine = new List<Dialog>();
     public List<Dialog> introduction = new List<Dialog>();
-    
-    private int index = 0;
-    
+
     public override Result Interact(PlayerData playerData)
     {
         Result result = ResultFactory.CreateEndingResult();
@@ -18,11 +17,19 @@ public class HarCat : CodingMamaCharacter
         switch (playerData.enumStage)
         {
             case EnumStage.Recruitment:
+                List<Dialog> currentDialog = defaultLine;
+                Debug.Log("State: " + state);
+                switch (state)
+                {
+                    case 0:
+                        currentDialog = introduction;
+                        break;
+                }
 
-                if (index < introduction.Count)
+                if (index < currentDialog.Count)
                 {
                     playerData.dialogManager.Show();
-                    playerData.dialogManager.DisplayDialog(introduction[index]);
+                    playerData.dialogManager.DisplayDialog(currentDialog[index]);
                     result = ResultFactory.CreateChattingResult();
                     index++;
                 }
@@ -30,7 +37,13 @@ public class HarCat : CodingMamaCharacter
                 {
                     result = ResultFactory.CreateEndingResult();
                     playerData.dialogManager.Hide();
-                    Debug.Log("Hide");
+
+                    switch (state)
+                    {
+                        case 0:
+                            state = 1;
+                            break;
+                    }
                 }
                 
                 break;
