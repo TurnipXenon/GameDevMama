@@ -12,24 +12,34 @@ public class TopDownCharacter2D : MonoBehaviour
     private static int ANIM_PARAM_IS_MOVING = Animator.StringToHash("IsMoving");
     
     public float walkSpeed = 5f;
-
+    public float dialogEndDelay = 60f;
+    
     public PlayerData playerData;
     
     public TopDownController2D controller;
     public Animator animator;
     public InteractionControlller interactionControlller;
 
-    private Vector2 _moveValue;
-    private bool isMoving;
+    private Vector2 _moveValue = Vector2.zero;
+    private bool _isMoving = false;
+    private bool _allowMovement = true;
 
     public void OnMove(InputValue value)
     {
-        _moveValue = value.Get<Vector2>();
-        
-        // region Animation
-        isMoving = _moveValue != Vector2.zero;
+        if (_allowMovement)
+        {
+            Debug.Log("Movable");
+            _moveValue = value.Get<Vector2>();
+        }
+        else
+        {
+            _moveValue = Vector2.zero;
+        }
 
-        if (isMoving)
+        // region Animation
+        _isMoving = _moveValue != Vector2.zero;
+
+        if (_isMoving)
         {
             animator.SetFloat(ANIM_PARAM_VECTOR_X, _moveValue.x);
             animator.SetFloat(ANIM_PARAM_VECTOR_Y, _moveValue.y);
@@ -43,23 +53,16 @@ public class TopDownCharacter2D : MonoBehaviour
                 transform.localScale = Vector3.one;
             }
         }
-        else
-        {
-            
-        }
 
-        animator.SetBool(ANIM_PARAM_IS_MOVING, isMoving);
+        animator.SetBool(ANIM_PARAM_IS_MOVING, _isMoving);
         // endregion Animation
 
     }
 
     public void OnInteract()
     {
-        interactionControlller.Interact(playerData);
-    }
-
-    private void Update()
-    {
+        Result result = interactionControlller.Interact(playerData);
+        _allowMovement = !result.isAnActiveResponse || result.isDone;
     }
 
     private void FixedUpdate()

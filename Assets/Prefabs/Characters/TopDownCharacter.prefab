@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2432801203892965765}
   - component: {fileID: 2432801203892965763}
   - component: {fileID: 2432801203892965766}
-  - component: {fileID: 2432801203892965762}
   - component: {fileID: 2706916141527968180}
   m_Layer: 0
   m_Name: TopDownCharacter
@@ -156,21 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a31cb582e1a2bb4a8e05356737a3e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2432801203892965762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2432801203892965770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5f394f6ec3f1943945015484f68654, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 5
-  controller: {fileID: 2432801203892965766}
-  animator: {fileID: 2432801203892965763}
 --- !u!114 &2706916141527968180
 MonoBehaviour:
   m_ObjectHideFlags: 0

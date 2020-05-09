@@ -26,11 +26,15 @@ public class InteractionControlller : MonoBehaviour
         }
     }
 
-    public void Interact(PlayerData playerData)
+    public Result Interact(PlayerData playerData)
     {
         if (_interactableCharacterList.Count > 0)
         {
-            _interactableCharacterList[_interactableCharacterList.Count - 1].Interact(playerData);
+            return _interactableCharacterList[_interactableCharacterList.Count - 1].Interact(playerData);
+        }
+        else
+        {
+            return ResultFactory.CreateNonReponseResult();
         }
     }
 }

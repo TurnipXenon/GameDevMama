@@ -6,8 +6,8 @@ public class InteractableCharacter : MonoBehaviour
 {
     public CodingMamaCharacter characterData;
 
-    public void Interact(PlayerData playerData)
+    public Result Interact(PlayerData playerData)
     {
-        characterData.Interact(playerData);
+        return characterData.Interact(playerData);
     }
 }

@@ -11,8 +11,15 @@ public class PlayerData : ScriptableObject
 
     public DialogManager dialogManager;
 
+    public EnumStage enumStage;
+
     public void SetActiveDialogManager(DialogManager dialogManager)
     {
         this.dialogManager = dialogManager;
+    }
+
+    public void SetEnumStage(EnumStage argEnumStage)
+    {
+        this.enumStage = argEnumStage;
     }
 }
