@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class TopDownCharacter2D : MonoBehaviour
 {
@@ -12,8 +13,11 @@ public class TopDownCharacter2D : MonoBehaviour
     
     public float walkSpeed = 5f;
 
+    public PlayerData playerData;
+    
     public TopDownController2D controller;
     public Animator animator;
+    public InteractionControlller interactionControlller;
 
     private Vector2 _moveValue;
     private bool isMoving;
@@ -51,7 +55,7 @@ public class TopDownCharacter2D : MonoBehaviour
 
     public void OnInteract()
     {
-        
+        interactionControlller.Interact(playerData);
     }
 
     private void Update()
