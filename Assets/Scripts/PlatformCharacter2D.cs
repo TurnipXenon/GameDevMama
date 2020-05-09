@@ -8,11 +8,11 @@ using UnityEngine.InputSystem;
  * Code from Brackeys.
  * Link: https://www.youtube.com/watch?time_continue=621&v=dwcT-Dch0bA&feature=emb_title
  */
-public class PlayerCharacter : MonoBehaviour
+public class PlatformCharacter2D : MonoBehaviour
 {
     public float runSpeed = 40f;
     
-    public CharacterController2D controller;
+    public PlatformerController2D controller;
 
     private float _horizontalMove = 0f;
     private bool _jump;

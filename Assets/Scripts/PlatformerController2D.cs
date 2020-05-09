@@ -5,7 +5,7 @@ using UnityEngine.Events;
  * Code from Brackeys.
  * Link: https://github.com/Brackeys/2D-Character-Controller/blob/master/CharacterController2D.cs
  */
-public class CharacterController2D : MonoBehaviour
+public class PlatformerController2D : MonoBehaviour
 {
 	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
