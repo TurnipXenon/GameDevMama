@@ -65,6 +65,14 @@ public class TopDownCharacter2D : MonoBehaviour
         _allowMovement = !result.isAnActiveResponse || result.isDone;
     }
 
+    public void OnSecondary()
+    {
+        if (_allowMovement)
+        {
+            interactionControlller.Recruit(playerData);
+        }
+    }
+
     private void FixedUpdate()
     {
         controller.Move(_moveValue * walkSpeed);

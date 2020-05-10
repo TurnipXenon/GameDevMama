@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ScriptableObjects;
 
 namespace DialogSystem
 {
@@ -29,20 +30,20 @@ namespace DialogSystem
             
         }
 
-        public Result TryUsing(EnumStage ArgEnumStage, PlayerData playerData)
+        public Result TryUsing(EnumStage ArgEnumStage, PlayerData playerData, CodingMamaCharacter characterData)
         {
             Result result = ResultFactory.CreateEndingResult();
             
             if (enumStage == ArgEnumStage)
             {
                 // do stuff with dialog
-                result = BodyTryUsing(playerData);
+                result = BodyTryUsing(playerData, characterData);
             }
 
             return result;
         }
 
-        protected abstract Result BodyTryUsing(PlayerData playerData);
+        protected abstract Result BodyTryUsing(PlayerData playerData, CodingMamaCharacter characterData);
     }
 
     [Serializable]
@@ -58,14 +59,16 @@ namespace DialogSystem
             dialogIndex = 0;
         }
 
-        public Result Display(PlayerData playerData)
+        public Result Display(PlayerData playerData, CodingMamaCharacter characterData)
         {
             if (dialogIndex < dialogList.Count)
             {
                 playerData.dialogManager.Show();
                 playerData.dialogManager.DisplayDialog(dialogList[dialogIndex]);
+                Result result = ResultFactory.CreateChattingResult();
+                result.yesOrNoQuestion = dialogList[dialogIndex].yesOrNoResult;
                 dialogIndex++;
-                return ResultFactory.CreateChattingResult();
+                return result;
             }
             else
             {

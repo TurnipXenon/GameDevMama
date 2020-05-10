@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44479bfd5b1d6b547aaeeb9bca9dced6, type: 3}
+  m_Name: Alex
+  m_EditorClassIdentifier: 
+  name: Alex
+  sprite: {fileID: 0}
+  role: Database and dance programmer
+  recruitmentDialogScheme:
+    enumStage: 0
+    defaultLine:
+      dialogList:
+      - sprite: {fileID: 0}
+        name: 
+        sentences: 'Speeeen!
+
+          Speeen!'
+        yesOrNoResult: {fileID: 0}
+    introduction:
+      dialogList:
+      - sprite: {fileID: 0}
+        name: 
+        sentences: Don't mind me! Someone forgot to freeze my rotation. This happens
+          a lot...
+        yesOrNoResult: {fileID: 0}
+      - sprite: {fileID: 0}
+        name: 
+        sentences: By the way, I'm Alex. If you need someone to do some programming.
+          I'm the person you're looking for!
+        yesOrNoResult: {fileID: 0}
+      - sprite: {fileID: 0}
+        name: 
+        sentences: 'Just in case your forgot, I fell over my chair and the bugs from
+          the floor whisphered: "Press Shift to recruit". I don''t know what that
+          is.'
+        yesOrNoResult: {fileID: 0}
+    accepted:
+      dialogList: []

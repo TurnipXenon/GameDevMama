@@ -6,8 +6,8 @@ using UnityEngine;
 
 namespace DialogSystem.Character
 {
-    [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Dialog/HarCat", order = 1)]
-    public class HarCat : CodingMamaCharacter
+    [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Dialog/Alex", order = 1)]
+    public class Alex : CodingMamaCharacter
     {
         public RecruitmentDialogScheme recruitmentDialogScheme = new RecruitmentDialogScheme();
 

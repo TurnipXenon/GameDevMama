@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DialogSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

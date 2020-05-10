@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: HarCat
   sprite: {fileID: 21300000, guid: cfca8df737e4d3c42bf9bb1ba02571fb, type: 3}
+  role: Jazz and Macarena expert
   recruitmentDialogScheme:
     enumStage: 0
     defaultLine:
@@ -21,16 +22,23 @@ MonoBehaviour:
       - sprite: {fileID: 21300000, guid: cfca8df737e4d3c42bf9bb1ba02571fb, type: 3}
         name: HarCat
         sentences: Are ya feeling Jazzy?
+        yesOrNoResult: {fileID: 0}
     introduction:
       dialogList:
       - sprite: {fileID: 21300000, guid: cfca8df737e4d3c42bf9bb1ba02571fb, type: 3}
         name: HarCat
         sentences: Hey, kid! Ya looking jazzy on that ripped jeans! The name's HarCat,
           your jazziest cat in our house.
+        yesOrNoResult: {fileID: 0}
       - sprite: {fileID: 21300000, guid: cfca8df737e4d3c42bf9bb1ba02571fb, type: 3}
         name: HarCat
         sentences: Well... Technically I'm the best Jazz cat in our house cause I
           live alone.
+        yesOrNoResult: {fileID: 0}
       - sprite: {fileID: 21300000, guid: cfca8df737e4d3c42bf9bb1ba02571fb, type: 3}
         name: HarCat
         sentences: Do you wanna make the jazziest game in THIS house?
+        yesOrNoResult: {fileID: 11400000, guid: beaa3b751e2618c4795bc0de6b636b60,
+          type: 2}
+    accepted:
+      dialogList: []

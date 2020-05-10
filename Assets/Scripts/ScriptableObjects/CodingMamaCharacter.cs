@@ -9,6 +9,7 @@ namespace ScriptableObjects
     {
         public String name;
         public Sprite sprite;
+        public String role;
     
         public abstract Result Interact(PlayerData playerData);
 

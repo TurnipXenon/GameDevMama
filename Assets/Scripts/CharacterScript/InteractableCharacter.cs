@@ -17,4 +17,10 @@ public class InteractableCharacter : MonoBehaviour
     {
         return characterData.Interact(playerData);
     }
+
+    public void Recruit(PlayerData playerData)
+    {
+        playerData.teamMemberList.Add(characterData);
+        Destroy(gameObject);
+    }
 }

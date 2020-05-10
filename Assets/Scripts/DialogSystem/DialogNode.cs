@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DialogSystem;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -22,7 +23,8 @@ public class DialogNode
 public class Result
 {
     public bool isDone = true;
-    [FormerlySerializedAs("isANonResponse")] [FormerlySerializedAs("isANonRespones")] public bool isAnActiveResponse = false;
+    public bool isAnActiveResponse = false;
+    public YesOrNoResult yesOrNoQuestion;
 }
 
 public class ResultFactory

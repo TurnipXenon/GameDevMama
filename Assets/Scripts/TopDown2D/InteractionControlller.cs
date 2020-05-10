@@ -37,4 +37,12 @@ public class InteractionControlller : MonoBehaviour
             return ResultFactory.CreateNonReponseResult();
         }
     }
+
+    public void Recruit(PlayerData playerData)
+    {
+        if (_interactableCharacterList.Count > 0)
+        {
+            _interactableCharacterList[_interactableCharacterList.Count - 1].Recruit(playerData);
+        }
+    }
 }
