@@ -1,4 +1,5 @@
 ﻿using System;
+using ScriptableObjects;
 using UnityEngine;
 
 namespace DialogSystem
@@ -11,5 +12,11 @@ namespace DialogSystem
         [TextArea(3, 10)] public String sentences;
     
         public YesOrNoResult yesOrNoResult;
+
+        public void ApplyCharacter(CodingMamaCharacter characterData)
+        {
+            sprite = characterData.sprite;
+            name = characterData.name;
+        }
     }
 }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3738c8d2afc1bde4b9bddd11779be97b, type: 3}
+  m_Name: ScopeUp
+  m_EditorClassIdentifier: 
+  dialogList:
+  - text: Poggers! We got to be poggers!
+    value: 1
+  - text: Guys, it's 2020! We need procedural generation! I trust our coding monkeys
+      to go ooh ooh ah ah!
+    value: 2
+  - text: '*speening monkey* more!!!!! *speening monkey?* more!!!'
+    value: 2
+  - text: Guys, I watched that cat girls Assembly videos. It's easy pea and sea!
+      Trust me, I'm a lawyer!
+    value: 6

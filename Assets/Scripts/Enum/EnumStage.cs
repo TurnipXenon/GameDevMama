@@ -4,5 +4,13 @@ using UnityEngine;
 
 public enum EnumStage
 {
-    Recruitment
+    Recruitment,
+    Scope,
+    Planning,
+    Coding,
+    Art,
+    Music,
+    Writing,
+    Github,
+    Itch
 }

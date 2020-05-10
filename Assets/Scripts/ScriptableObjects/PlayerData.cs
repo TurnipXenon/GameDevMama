@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = System.Random;
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/PlayerData", order = 1)]
 public class PlayerData : ScriptableObject
@@ -14,7 +15,12 @@ public class PlayerData : ScriptableObject
 
     public EnumStage enumStage;
 
-    public List<CodingMamaCharacter> teamMemberList = new List<CodingMamaCharacter>();
+    [Header("Variable end game results")] 
+    public float scopeResult;
+    public List<CodingMamaCharacter> teamMemberList;
+    
+    
+    private Random _random;
 
     public void SetActiveDialogManager(DialogManager dialogManager)
     {
@@ -30,5 +36,21 @@ public class PlayerData : ScriptableObject
     {
         teamMemberList.Add(characterData);
         return true;
+    }
+
+    public CodingMamaCharacter GetRandomCharacter()
+    {
+        if (_random == null)
+        {
+            _random = new Random();
+        }
+
+        int index = _random.Next(teamMemberList.Count);
+        return teamMemberList[index];
+    }
+
+    public void SetScopeResult(float argScopeResult)
+    {
+        scopeResult = argScopeResult;
     }
 }

@@ -10,7 +10,10 @@ namespace ScriptableObjects
         public String name;
         public Sprite sprite;
         public String role;
-    
+        
+        [SerializeField]
+        private bool _scopePreference;
+
         public abstract Result Interact(PlayerData playerData);
 
         public void RestartValues()
@@ -20,6 +23,11 @@ namespace ScriptableObjects
 
         public virtual void RestartValuesHook()
         {
+        }
+
+        public void SetScopePreference(bool scopeUp)
+        {
+            _scopePreference = scopeUp;
         }
     }
 }

@@ -76,5 +76,13 @@ namespace DialogSystem
                 return ResultFactory.CreateEndingResult();
             }
         }
+
+        public void ApplyCharacter(CodingMamaCharacter characterData)
+        {
+            foreach (Dialog dialog in dialogList)
+            {
+                dialog.ApplyCharacter(characterData);
+            }
+        }
     }
 }

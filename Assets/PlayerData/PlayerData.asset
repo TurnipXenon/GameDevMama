@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   name: 
+  dialogManager: {fileID: 0}
+  enumStage: 0
+  teamMemberList:
+  - {fileID: 11400000, guid: aa956d72461f42649b333428ee83f153, type: 2}
+  - {fileID: 11400000, guid: 3c48b10197b68f64cb501ec80d5be65c, type: 2}
