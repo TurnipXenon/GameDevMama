@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using DialogSystem;
 using Levels.Coding;
+using Levels.Music;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,29 +12,29 @@ using UnityEngine.UI;
 
 public class LevelManagerMusic : LevelManagerBase
 {
-    public float gameplayDuration = 120f;
-    public float minDotSpeed = 3f;
-    public float minScale = 0.4f;
-    public float scaleAllowance = 0.6f;
-    public float speedAllowance = 37f;
-
+    public float startDelay = 1.5f;
+    
     public TopDownCharacter2D playerAvatar;
-
+    public BeatMapData beatMapData;
+    public GameObject prefabExcellent;
+    public GameObject prefabGreat;
+    public GameObject prefabGood;
+    public GameObject prefabMiss;
+    public GameObject prefabBeat;
+    public AudioSource badAudio;
+    public AudioSource goodAudio;
+    
     public DialogGroup beginningDialog;
     public DialogGroup resultDialog;
 
     private CodingMamaCharacter _characterData;
     private State _state;
     private DialogGroup _currentDialog;
-    private IEnumerator _inputGenerationCoroutine;
-    private float _genDuration;
-    private float _startTime;
-    private bool _isThreatened;
-    private int _dotContactCount;
-    private float _goodScore;
-    private float _invLerpValue;
     private float _lerpValue = 1f;
-    private float _badScore;
+    private List<BeatObjectGrade> gradeList;
+    private AudioManager _audioManager;
+    private BeatMap _beatMap;
+    private AudioSource _audioSource;
 
     private enum State
     {
@@ -44,10 +46,15 @@ public class LevelManagerMusic : LevelManagerBase
     public override void Start()
     {
         base.Start();
-
+        
+        gradeList = new List<BeatObjectGrade>();
+        
+        _audioManager = AudioManager.GetInstance();
+        _beatMap = beatMapData.GenerateBeatMap();
         _state = State.Beginning;
-        _invLerpValue = 1f;
-        _lerpValue = 0f;
+
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.clip = beatMapData.GetAudioClip();
         
         _characterData = playerData.GetRandomCharacter();
         _currentDialog = beginningDialog;
@@ -57,18 +64,34 @@ public class LevelManagerMusic : LevelManagerBase
 
     private void Update()
     {
-        if (_state == State.Gameplay)
+        if (_state == State.Gameplay && _beatMap.IsReady())
         {
-            _lerpValue = (Time.time - _startTime) / gameplayDuration;
-            _invLerpValue = 1 - _lerpValue;
-            
-            if (_dotContactCount == 0)
+            if (_beatMap.IsDone())
             {
-                _badScore += Time.deltaTime;
+                _state = State.Result;
+                playerData.SetMusicGrade(gradeList);
+
+                _currentDialog = resultDialog;
+                _currentDialog.ApplyCharacter(_characterData);
+                _currentDialog.Display(playerData, _characterData);
+                return;
             }
-            else
+
+            BeatObject beatObject = _beatMap.RequestDrawableBeat();
+            if (beatObject != null)
             {
-                _goodScore += Time.deltaTime;
+                BeatRenderer beatRenderer = Instantiate(prefabBeat).GetComponent<BeatRenderer>();
+                beatRenderer.SetData(beatObject, _beatMap);
+                beatRenderer.Init();
+            }
+            
+            BeatObjectGrade grade = _beatMap.React(false);
+            
+            if (grade == BeatObjectGrade.Miss)
+            {
+                gradeList.Add(grade);
+                badAudio.Play();
+                Instantiate(prefabMiss);
             }
         }
     }
@@ -83,14 +106,42 @@ public class LevelManagerMusic : LevelManagerBase
 
                 if (result.isDone)
                 {
-                    // _inputGenerationCoroutine = InputGenerationCoroutine();
                     _state = State.Gameplay;
-
-                    // StartCoroutine(_inputGenerationCoroutine);
-                    StartCoroutine(GameplayTimer());
+                    _audioManager.TryPause();
+                    StartCoroutine(StarDelay());
                 }
                 break;
             case State.Gameplay:
+                if (_beatMap.IsReady())
+                {
+                    BeatObjectGrade grade = _beatMap.React(true);
+                    gradeList.Add(grade);
+                    
+                    switch (grade)
+                    {
+                        case BeatObjectGrade.Waiting:
+                            break;
+                        case BeatObjectGrade.Excellent:
+                            Instantiate(prefabExcellent);
+                            goodAudio.Play();
+                            break;
+                        case BeatObjectGrade.Good:
+                            Instantiate(prefabGreat);
+                            goodAudio.Play();
+                            break;
+                        case BeatObjectGrade.Okay:
+                            Instantiate(prefabGood);
+                            goodAudio.Play();
+                            break;
+                        case BeatObjectGrade.Miss:
+                            break;
+                        case BeatObjectGrade.Inactive:
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                }
+                
                 break;
             case State.Result:
                 result = _currentDialog.Display(playerData, _characterData);
@@ -106,70 +157,10 @@ public class LevelManagerMusic : LevelManagerBase
         }
     }
 
-    public void OnMove(InputValue value)
+    IEnumerator StarDelay()
     {
-        if (_state == State.Gameplay)
-        {
-            playerAvatar.OnMove(value);
-        }
-    }
-
-    IEnumerator GameplayTimer()
-    {
-        _startTime = Time.time;
-        yield return new WaitForSeconds(gameplayDuration);
-
-        if (_inputGenerationCoroutine != null)
-        {
-            StopCoroutine(_inputGenerationCoroutine);
-        }
-
-        foreach (Transform child in transform)
-        {
-            CodingBug script = child.GetComponent<CodingBug>();
-
-            if (script != null)
-            {
-                script.enabled = false;
-            }
-        }
-
-        _state = State.Result;
-        playerAvatar.Freeze();
-
-        playerData.SetArtScore(_goodScore, _badScore);
-        
-        _currentDialog = resultDialog;
-        _currentDialog.ApplyCharacter(_characterData);
-        _currentDialog.Display(playerData, _characterData);
-    }
-
-    public void InformEnterDot()
-    {
-        _dotContactCount++;
-    }
-
-    public void InformExitDot()
-    {
-        _dotContactCount--;
-    }
-
-    public float GetSpeed()
-    {
-        if (_state == State.Gameplay)
-        {
-            return minDotSpeed + speedAllowance * _lerpValue;
-        }
-
-        return -1;
-    }
-
-    public Vector3 GetRandomScale()
-    {
-        float randomFloat = UnityEngine.Random.Range(
-            minScale,
-            minScale + _invLerpValue * scaleAllowance
-            );
-        return new Vector2(randomFloat, randomFloat);
+        yield return new WaitForSeconds(startDelay);
+        _audioSource.Play();
+        _beatMap.Start(_audioSource);
     }
 }

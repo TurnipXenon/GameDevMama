@@ -14,8 +14,113 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timestampList: c91a0000751c0000221e00007b21000051220000fe2300002d280000da290000862b0000e02e0000b62f000062310000e1330000d3360000eb380000c1390000d93b0000af3c0000744000004a410000a94900005b50000008520000b45300000d570000665a0000c05d00006c5f000019610000726400001e660000cb670000246b0000d16c00007d6e0000d67100008373000030750000897800005f790000357a00000c7b0000e27b0000ed850000a08c000052930000b6a0000063a2000010a40000d4a70000aaa8000057aa0000
   beatMapBase:
-    excellentTolerance: 0.03
-    goodTolerance: 0.06
-    okayTolerance: 0.12
+    excellentTolerance: 0.025
+    goodTolerance: 0.09
+    okayTolerance: 0.25
     screenTime: 3
-    beatObjectList: []
+    audioClip: {fileID: 8300000, guid: 668052ee51d9b964dabe2eb389caf880, type: 3}
+    beatObjectList:
+    - beatTime: 6.857
+      grade: 2
+    - beatTime: 7.285
+      grade: 3
+    - beatTime: 7.714
+      grade: 1
+    - beatTime: 8.571
+      grade: 3
+    - beatTime: 8.785
+      grade: 2
+    - beatTime: 9.214
+      grade: 2
+    - beatTime: 10.285
+      grade: 1
+    - beatTime: 10.714
+      grade: 1
+    - beatTime: 11.142
+      grade: 2
+    - beatTime: 12
+      grade: 3
+    - beatTime: 12.214
+      grade: 2
+    - beatTime: 12.642
+      grade: 2
+    - beatTime: 13.281
+      grade: 1
+    - beatTime: 14.035
+      grade: 1
+    - beatTime: 14.571
+      grade: 3
+    - beatTime: 14.785
+      grade: 1
+    - beatTime: 15.321
+      grade: 2
+    - beatTime: 15.535
+      grade: 1
+    - beatTime: 16.5
+      grade: 3
+    - beatTime: 16.714
+      grade: 3
+    - beatTime: 18.857
+      grade: 3
+    - beatTime: 20.571
+      grade: 2
+    - beatTime: 21
+      grade: 3
+    - beatTime: 21.428
+      grade: 2
+    - beatTime: 22.285
+      grade: 4
+    - beatTime: 23.142
+      grade: 3
+    - beatTime: 24
+      grade: 3
+    - beatTime: 24.428
+      grade: 2
+    - beatTime: 24.857
+      grade: 3
+    - beatTime: 25.714
+      grade: 3
+    - beatTime: 26.142
+      grade: 2
+    - beatTime: 26.571
+      grade: 2
+    - beatTime: 27.428
+      grade: 3
+    - beatTime: 27.857
+      grade: 2
+    - beatTime: 28.285
+      grade: 2
+    - beatTime: 29.142
+      grade: 3
+    - beatTime: 29.571
+      grade: 2
+    - beatTime: 30
+      grade: 2
+    - beatTime: 30.857
+      grade: 3
+    - beatTime: 31.071
+      grade: 2
+    - beatTime: 31.285
+      grade: 2
+    - beatTime: 31.5
+      grade: 3
+    - beatTime: 31.714
+      grade: 3
+    - beatTime: 34.285
+      grade: 3
+    - beatTime: 36
+      grade: 2
+    - beatTime: 37.714
+      grade: 2
+    - beatTime: 41.142
+      grade: 2
+    - beatTime: 41.571
+      grade: 1
+    - beatTime: 42
+      grade: 1
+    - beatTime: 42.964
+      grade: 3
+    - beatTime: 43.178
+      grade: 1
+    - beatTime: 43.607
+      grade: 1

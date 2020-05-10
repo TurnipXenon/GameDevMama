@@ -35,9 +35,35 @@ namespace DefaultNamespace
             }
         }
 
+        public static AudioManager GetInstance()
+        {
+            if (INSTANCE != null)
+            {
+                return INSTANCE;
+            }
+
+            return null;
+        }
+        
         public void Play(AudioScriptable audioScriptable)
         {
             audioScriptable.TryPlay();
+        }
+
+        public void TryPlay()
+        {
+            foreach (AudioScriptable audioScriptable in persistentSoundList)
+            {
+                audioScriptable.TryPlay();
+            }
+        }
+
+        public void TryPause()
+        {
+            foreach (AudioScriptable audioScriptable in persistentSoundList)
+            {
+                audioScriptable.TryPause();
+            }
         }
     }
 }

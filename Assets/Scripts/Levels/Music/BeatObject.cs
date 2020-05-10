@@ -7,10 +7,21 @@ namespace Levels.Music
     public class BeatObject
     {
         public float beatTime;
-        
+        public BeatObjectGrade grade = BeatObjectGrade.Waiting;
+
         public bool shouldDraw(BeatMap beatMap)
         {
-            return Time.time + beatMap.screenTime - beatTime > 0;
+            return beatMap.GetElapsedTime() + beatMap.screenTime - beatTime > 0;
+        }
+
+        public float GetLerpValue(BeatMap beatMap)
+        {
+            return (beatTime - beatMap.GetElapsedTime()) / beatMap.screenTime;
+        }
+
+        public void SetGrade(BeatObjectGrade argGrade)
+        {
+            grade = argGrade;
         }
     }
 
@@ -21,7 +32,6 @@ namespace Levels.Music
         Good,
         Okay,
         Miss,
-        Bad,
         Inactive
     }
 }

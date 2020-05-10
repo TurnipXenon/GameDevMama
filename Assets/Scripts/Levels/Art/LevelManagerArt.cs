@@ -16,7 +16,6 @@ public class LevelManagerArt : LevelManagerBase
     public float scaleAllowance = 0.6f;
     public float speedAllowance = 37f;
 
-    public GameObject prefabBug;
     public TopDownCharacter2D playerAvatar;
 
     public DialogGroup beginningDialog;
@@ -119,21 +118,6 @@ public class LevelManagerArt : LevelManagerBase
     {
         _startTime = Time.time;
         yield return new WaitForSeconds(gameplayDuration);
-
-        if (_inputGenerationCoroutine != null)
-        {
-            StopCoroutine(_inputGenerationCoroutine);
-        }
-
-        foreach (Transform child in transform)
-        {
-            CodingBug script = child.GetComponent<CodingBug>();
-
-            if (script != null)
-            {
-                script.enabled = false;
-            }
-        }
 
         _state = State.Result;
         playerAvatar.Freeze();

@@ -9,6 +9,11 @@ public class BeatMapData : ScriptableObject
     public List<int> timestampList;
     public BeatMap beatMapBase;
 
+    public AudioClip GetAudioClip()
+    {
+        return beatMapBase.audioClip;
+    }
+
     public BeatMap GenerateBeatMap()
     {
         BeatMap beatMap = beatMapBase.ShallowClone();

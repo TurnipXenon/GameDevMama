@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Levels.Music;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -21,6 +22,7 @@ public class PlayerData : ScriptableObject
     public int bugKillCount;
     public int remainingBugCount;
     public float artScore;
+    public List<BeatObjectGrade> musicGradeList;
     
     
     private Random _random;
@@ -69,5 +71,10 @@ public class PlayerData : ScriptableObject
     public void SetArtScore(float argGoodScore, float argBadScore)
     {
         artScore = argGoodScore + (argBadScore * 5);
+    }
+
+    public void SetMusicGrade(List<BeatObjectGrade> argGradeList)
+    {
+        musicGradeList = argGradeList;
     }
 }
