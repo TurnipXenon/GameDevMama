@@ -256,12 +256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5f394f6ec3f1943945015484f68654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &716101085 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2432801203892965768, guid: c3bf95798c89f9c4b8ae1e85c3ac9bd5,
-    type: 3}
-  m_PrefabInstance: {fileID: 2432801203448519967}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &757051608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2980,15 +2974,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2138491235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 209b14d25f621dd478e4ec29bb7fa790, type: 3}
+  m_Script: {fileID: 11500000, guid: 86cd6648a01dd6f41b17099faaadd06a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: e52b31d6bc23071498727fe9eef7851a, type: 2}
-  enumStage: 3
-  gameplayDuration: 5
-  minGenDuration: 2
-  maxGenDuration: 4
-  codingBugGenerationLimit: {x: 8, y: 4}
+  enumStage: 4
+  gameplayDuration: 120
+  minDotSpeed: 1
+  minScale: 0.4
+  scaleAllowance: 0.6
+  speedAllowance: 37
   prefabBug: {fileID: 7699656216664823896, guid: 3ae600b1185f4cf40977a167842bbee1,
     type: 3}
   playerAvatar: {fileID: 716101078}
@@ -2996,29 +2991,33 @@ MonoBehaviour:
     dialogList:
     - sprite: {fileID: 0}
       name: 
-      sentences: Ack! We have bugs! Do you know how to code? I need help squashing
-        these bugs!
+      sentences: Ah! I see you're using SpadeSprite! I personally prefer using SIMP2
+        but that doesn't matter.
       yesOrNoResult: {fileID: 0}
     - sprite: {fileID: 0}
       name: 
-      sentences: I'm going to get some Jim Jortons. Do you want some JimBits?
+      sentences: What matters is if you know what you're doing. Stick to the lines.
+        Don't get out of that comfy zone of dark ink.
       yesOrNoResult: {fileID: 0}
     - sprite: {fileID: 0}
       name: 
-      sentences: HetStomach Hider is some fancy IDE so you just have to step on those
-        pesky bugs! Isn't it lovely that they made a GUI for bugs?
+      sentences: Make sure you clean up your lineart! What? You do lineless? That's
+        not the point of the game right now!
       yesOrNoResult: {fileID: 0}
   resultDialog:
     dialogList:
     - sprite: {fileID: 0}
       name: 
-      sentences: Hey! I'm back! We also brought Jendy's! Also, did you see any wallet
-        around here? Someone was walking around trying to find his wallet.
+      sentences: Hey! I'm sorry to bother you but they need those assets now!
       yesOrNoResult: {fileID: 0}
     - sprite: {fileID: 0}
       name: 
-      sentences: You can go back to what you were doing. I'll take care of those
-        remaining bugs.
+      sentences: Sometimes, finishing the product is more important. You can't keep
+        on aiming perfection. You'll never get anything done!
+      yesOrNoResult: {fileID: 0}
+    - sprite: {fileID: 0}
+      name: 
+      sentences: Either way! Good job! That's some sick lines you got there!
       yesOrNoResult: {fileID: 0}
 --- !u!114 &2138491237
 MonoBehaviour:
@@ -3051,6 +3050,80 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1001 &1205955922618104277
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1926703237}
+    m_Modifications:
+    - target: {fileID: 1205955922805037834, guid: 6951b6391348d7f4aaf7bee1b6487476,
+        type: 3}
+      propertyPath: m_Name
+      value: InkDot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205955922805037876, guid: 6951b6391348d7f4aaf7bee1b6487476,
+        type: 3}
+      propertyPath: levelManagementArt
+      value: 
+      objectReference: {fileID: 2138491236}
+    - target: {fileID: 1205955922805037877, guid: 6951b6391348d7f4aaf7bee1b6487476,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205955922805037877, guid: 6951b6391348d7f4aaf7bee1b6487476,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205955922805037877, guid: 6951b6391348d7f4aaf7bee1b6487476,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205955922805037877, guid: 6951b6391348d7f4aaf7bee1b6487476,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205955922805037877, guid: 6951b6391348d7f4aaf7bee1b6487476,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205955922805037877, guid: 6951b6391348d7f4aaf7bee1b6487476,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205955922805037877, guid: 6951b6391348d7f4aaf7bee1b6487476,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205955922805037877, guid: 6951b6391348d7f4aaf7bee1b6487476,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205955922805037877, guid: 6951b6391348d7f4aaf7bee1b6487476,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205955922805037877, guid: 6951b6391348d7f4aaf7bee1b6487476,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205955922805037877, guid: 6951b6391348d7f4aaf7bee1b6487476,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6951b6391348d7f4aaf7bee1b6487476, type: 3}
 --- !u!1001 &2432801203448519967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3265,82 +3338,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 234614c4371609c4eafd03deb8169a67, type: 3}
---- !u!1001 &7699656216873065303
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1926703237}
-    m_Modifications:
-    - target: {fileID: 7699656216664823877, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: playerTransform
-      value: 
-      objectReference: {fileID: 716101085}
-    - target: {fileID: 7699656216664823877, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: movementState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699656216664823879, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699656216664823879, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699656216664823879, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699656216664823879, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699656216664823879, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699656216664823879, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699656216664823879, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699656216664823879, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699656216664823879, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699656216664823879, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699656216664823879, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699656216664823896, guid: 3ae600b1185f4cf40977a167842bbee1,
-        type: 3}
-      propertyPath: m_Name
-      value: CodingBug
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3ae600b1185f4cf40977a167842bbee1, type: 3}

@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Recruitment.unity
     guid: 5679e0172b20bb049a7496539673dfd0
+  - enabled: 1
+    path: Assets/Scenes/Art.unity
+    guid: e349c2327f9f8304f8056f85d9dbf641
   m_configObjects: {}

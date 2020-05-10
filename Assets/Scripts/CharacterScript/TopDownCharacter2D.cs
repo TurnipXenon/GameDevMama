@@ -85,8 +85,8 @@ public class TopDownCharacter2D : MonoBehaviour
 
     public void Freeze()
     {
+        _moveValue = Vector2.zero;
         _rigidbody2D.velocity = Vector2.zero;
-        _rigidbody2D.bodyType = RigidbodyType2D.Static;
         animator.SetBool(ANIM_PARAM_IS_MOVING, false);
     }
 }

@@ -20,6 +20,8 @@ public class PlayerData : ScriptableObject
     public List<CodingMamaCharacter> teamMemberList;
     public int bugKillCount;
     public int remainingBugCount;
+    public float artScore;
+    
     
     private Random _random;
 
@@ -62,5 +64,10 @@ public class PlayerData : ScriptableObject
 
     public void SetBugLeft(int transformChildCount) {
         remainingBugCount = transformChildCount;
+    }
+
+    public void SetArtScore(float argGoodScore, float argBadScore)
+    {
+        artScore = argGoodScore + (argBadScore * 5);
     }
 }
