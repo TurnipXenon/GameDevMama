@@ -119,7 +119,6 @@ namespace Levels.Coding
         {
             int index = UnityEngine.Random.Range(0, ENUM_VALUES.Length);
             movementState = (MovementState)ENUM_VALUES.GetValue(index);
-            Debug.Log(movementState);
             InitMovementState(movementState);
         }
 

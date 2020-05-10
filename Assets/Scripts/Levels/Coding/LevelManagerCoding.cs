@@ -109,6 +109,7 @@ public class LevelManagerCoding : LevelManagerBase
         if (elapsedTime > gameplayDuration * 0.8)
         {
             randomTime /= 4;
+            _isThreatened = true;
         }
         else if (elapsedTime > gameplayDuration / 2)
         {
@@ -141,8 +142,10 @@ public class LevelManagerCoding : LevelManagerBase
                 script.enabled = false;
             }
         }
-        
+
         _state = State.Result;
+        playerAvatar.Freeze();
+        playerData.SetBugLeft(transform.childCount);
         
         _currentDialog = resultDialog;
         _currentDialog.ApplyCharacter(_characterData);

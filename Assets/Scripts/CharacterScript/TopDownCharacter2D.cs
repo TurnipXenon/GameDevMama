@@ -23,6 +23,12 @@ public class TopDownCharacter2D : MonoBehaviour
     private Vector2 _moveValue = Vector2.zero;
     private bool _isMoving = false;
     private bool _allowMovement = true;
+    private Rigidbody2D _rigidbody2D;
+
+    private void Start()
+    {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+    }
 
     public void OnMove(InputValue value)
     {
@@ -75,5 +81,12 @@ public class TopDownCharacter2D : MonoBehaviour
     private void FixedUpdate()
     {
         controller.Move(_moveValue * walkSpeed);
+    }
+
+    public void Freeze()
+    {
+        _rigidbody2D.velocity = Vector2.zero;
+        _rigidbody2D.bodyType = RigidbodyType2D.Static;
+        animator.SetBool(ANIM_PARAM_IS_MOVING, false);
     }
 }

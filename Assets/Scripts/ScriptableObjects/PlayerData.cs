@@ -59,4 +59,8 @@ public class PlayerData : ScriptableObject
     {
         bugKillCount++;
     }
+
+    public void SetBugLeft(int transformChildCount) {
+        remainingBugCount = transformChildCount;
+    }
 }

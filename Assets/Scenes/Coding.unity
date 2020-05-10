@@ -2985,9 +2985,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: e52b31d6bc23071498727fe9eef7851a, type: 2}
   enumStage: 3
-  gameplayDuration: 60
+  gameplayDuration: 120
   minGenDuration: 2
-  maxGenDuration: 5
+  maxGenDuration: 4
   codingBugGenerationLimit: {x: 8, y: 4}
   prefabBug: {fileID: 7699656216664823896, guid: 3ae600b1185f4cf40977a167842bbee1,
     type: 3}
