@@ -77,7 +77,7 @@ public class PlayerData : ScriptableObject
 
     public void SetArtScore(float argGoodScore, float argBadScore)
     {
-        artScore = argGoodScore + (argBadScore * 5);
+        artScore = argGoodScore + (argBadScore * 4);
     }
 
     public void SetMusicGrade(List<BeatObjectGrade> argGradeList)

@@ -13,6 +13,16 @@ namespace DialogSystem
     
         public YesOrNoResult yesOrNoResult;
 
+        public Dialog()
+        {
+            
+        }
+
+        public Dialog(String sentences)
+        {
+            this.sentences = sentences;
+        }
+
         public void ApplyCharacter(CodingMamaCharacter characterData)
         {
             sprite = characterData.sprite;

@@ -15,5 +15,6 @@ MonoBehaviour:
   dialogList:
   - text: Mmm... ://
     value: 1
-  - text: I'm not familiar with Unauthentic Engine. Maybe we should scope down.
+  - text: I'm not familiar with Unauthentic Engine. Maybe we should scope down. Let's
+      try Itch. Wait a sec...
     value: 1
