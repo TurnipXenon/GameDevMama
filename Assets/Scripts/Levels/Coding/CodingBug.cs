@@ -106,10 +106,10 @@ namespace Levels.Coding
             }
         }
 
-        public void SetData(Vector2 argVector, Transform playerTransform, bool isThreatened, MovementState movementState)
+        public void SetData(Vector2 generationLimit, Transform playerTransform, bool isThreatened)
         {
             _isThreatened = isThreatened;
-            _generationLimit = argVector;
+            _generationLimit = generationLimit;
             this.playerTransform = playerTransform;
             
             InitMovementState();
@@ -119,6 +119,7 @@ namespace Levels.Coding
         {
             int index = UnityEngine.Random.Range(0, ENUM_VALUES.Length);
             movementState = (MovementState)ENUM_VALUES.GetValue(index);
+            Debug.Log(movementState);
             InitMovementState(movementState);
         }
 

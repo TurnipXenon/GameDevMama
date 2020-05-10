@@ -28,7 +28,6 @@ public class TopDownCharacter2D : MonoBehaviour
     {
         if (_allowMovement)
         {
-            Debug.Log("Movable");
             _moveValue = value.Get<Vector2>();
         }
         else

@@ -10,7 +10,7 @@ public class DialogManager : MonoBehaviour
     public PlayerData playerData;
     public UIPanel uiPanel;
 
-    private void Start()
+    private void Awake()
     {
         playerData.SetActiveDialogManager(this);
     }
