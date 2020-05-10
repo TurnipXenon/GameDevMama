@@ -18,5 +18,10 @@ namespace DialogSystem
             sprite = characterData.sprite;
             name = characterData.name;
         }
+
+        public void SetText(String text)
+        {
+            sentences = text;
+        }
     }
 }

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44479bfd5b1d6b547aaeeb9bca9dced6, type: 3}
-  m_Name: Alex
+  m_Name: May
   m_EditorClassIdentifier: 
-  name: Alex
-  sprite: {fileID: 21300000, guid: 1ff66b7aa26eae24ca046195e09cc98f, type: 3}
-  role: Database and dance programmer
-  formalRole: 0
+  name: May
+  sprite: {fileID: 21300000, guid: d0828a6be3abc6f40b7f424c308af25b, type: 3}
+  role: Abberant artist
+  formalRole: 1
   _scopePreference: 0
   recruitmentDialogScheme:
     enumStage: 0
@@ -23,26 +23,30 @@ MonoBehaviour:
       dialogList:
       - sprite: {fileID: 21300000, guid: 1ff66b7aa26eae24ca046195e09cc98f, type: 3}
         name: Alex
-        sentences: 'Speeeen!
-
-          Speeen!'
+        sentences: Guess when I was born?
+        yesOrNoResult: {fileID: 0}
+      - sprite: {fileID: 21300000, guid: 1ff66b7aa26eae24ca046195e09cc98f, type: 3}
+        name: Alex
+        sentences: ...
+        yesOrNoResult: {fileID: 0}
+      - sprite: {fileID: 21300000, guid: 1ff66b7aa26eae24ca046195e09cc98f, type: 3}
+        name: Alex
+        sentences: June!
         yesOrNoResult: {fileID: 0}
     introduction:
       dialogList:
       - sprite: {fileID: 21300000, guid: 1ff66b7aa26eae24ca046195e09cc98f, type: 3}
         name: Alex
-        sentences: Don't mind me! Someone forgot to freeze my rotation. This happens
-          a lot...
+        sentences: Pen is just pencil without cil. Am I right?
         yesOrNoResult: {fileID: 0}
       - sprite: {fileID: 21300000, guid: 1ff66b7aa26eae24ca046195e09cc98f, type: 3}
         name: Alex
-        sentences: By the way, I'm Alex. If you need someone to do some programming.
-          I'm the person you're looking for!
+        sentences: I'm May! I LOOOOOOVE drawing! I love drawing grocery stores! Don't
+          like going to Dor-Mart with your toilet paper cahier?
         yesOrNoResult: {fileID: 0}
       - sprite: {fileID: 21300000, guid: 1ff66b7aa26eae24ca046195e09cc98f, type: 3}
         name: Alex
-        sentences: ' I fell over my chair and the bugs from the floor whisphered:
-          "Press Shift to recruit". I don''t know what that is.'
+        sentences: I hope you recruit me into your ventures!
         yesOrNoResult: {fileID: 0}
     accepted:
       dialogList: []

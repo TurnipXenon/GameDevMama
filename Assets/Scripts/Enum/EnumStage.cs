@@ -5,12 +5,10 @@ using UnityEngine;
 public enum EnumStage
 {
     Recruitment,
+    Introduction,
     Scope,
-    Planning,
     Coding,
     Art,
     Music,
-    Writing,
-    Github,
     Itch
 }

@@ -6,6 +6,7 @@ using Levels.Coding;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManagerCoding : LevelManagerBase
@@ -73,8 +74,7 @@ public class LevelManagerCoding : LevelManagerBase
 
                 if (result.isDone)
                 {
-                    // todo: next scene
-                    Debug.Log("Got to next scene");
+                    SceneManager.LoadScene("Ending");
                 }
                 break;
             default:

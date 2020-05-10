@@ -6,6 +6,7 @@ using DialogSystem;
 using ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManagerScope : LevelManagerBase
 {
@@ -78,8 +79,7 @@ public class LevelManagerScope : LevelManagerBase
 
                 if (result.isDone)
                 {
-                    // todo: next scene
-                    Debug.Log("Got to next scene");
+                    SceneManager.LoadScene("Music");
                 }
                 break;
             default:

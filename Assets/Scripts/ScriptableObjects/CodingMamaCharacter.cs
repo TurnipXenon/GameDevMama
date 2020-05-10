@@ -10,6 +10,7 @@ namespace ScriptableObjects
         public String name;
         public Sprite sprite;
         public String role;
+        public GameRole formalRole;
         
         [SerializeField]
         private bool _scopePreference;
@@ -29,5 +30,13 @@ namespace ScriptableObjects
         {
             _scopePreference = scopeUp;
         }
+    }
+
+    public enum GameRole
+    {
+        Programmer,
+        Artist,
+        Writer,
+        Musician
     }
 }

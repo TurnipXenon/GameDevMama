@@ -2979,13 +2979,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: e52b31d6bc23071498727fe9eef7851a, type: 2}
   enumStage: 4
-  gameplayDuration: 120
+  gameplayDuration: 60
   minDotSpeed: 1
-  minScale: 0.4
+  minScale: 0.1
   scaleAllowance: 0.6
   speedAllowance: 37
-  prefabBug: {fileID: 7699656216664823896, guid: 3ae600b1185f4cf40977a167842bbee1,
-    type: 3}
   playerAvatar: {fileID: 716101078}
   beginningDialog:
     dialogList:
@@ -3263,6 +3261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2710996892413822000, guid: cf85c6a80123463408b2725d46058b0f, type: 3}
+    - {fileID: 2138491236, guid: cf85c6a80123463408b2725d46058b0f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cf85c6a80123463408b2725d46058b0f, type: 3}
 --- !u!1001 &7049137813031111857
 PrefabInstance:

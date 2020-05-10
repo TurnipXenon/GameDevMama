@@ -27,6 +27,13 @@ public class PlayerData : ScriptableObject
     
     private Random _random;
 
+    public void Restart()
+    {
+        scopeResult = 0f;
+        teamMemberList = new List<CodingMamaCharacter>();
+        musicGradeList = new List<BeatObjectGrade>();
+    }
+
     public void SetActiveDialogManager(DialogManager dialogManager)
     {
         this.dialogManager = dialogManager;
@@ -76,5 +83,36 @@ public class PlayerData : ScriptableObject
     public void SetMusicGrade(List<BeatObjectGrade> argGradeList)
     {
         musicGradeList = argGradeList;
+    }
+
+    public int GetTotalMusicScore()
+    {
+        int score = 0;
+        foreach (var VARIABLE in musicGradeList)
+        {
+            switch (VARIABLE)
+            {
+                case BeatObjectGrade.Waiting:
+                    break;
+                case BeatObjectGrade.Excellent:
+                    score += 6;
+                    break;
+                case BeatObjectGrade.Good:
+                    score += 2;
+                    break;
+                case BeatObjectGrade.Okay:
+                    score += 1;
+                    break;
+                case BeatObjectGrade.Miss:
+                    score += 5;
+                    break;
+                case BeatObjectGrade.Inactive:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        return score;
     }
 }

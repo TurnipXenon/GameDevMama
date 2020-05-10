@@ -11,4 +11,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Recruitment.unity
     guid: 5679e0172b20bb049a7496539673dfd0
+  - enabled: 1
+    path: Assets/Scenes/Coding.unity
+    guid: 1fcfce229d5bfcb4fa3b1ac2afa92d45
+  - enabled: 1
+    path: Assets/Scenes/Introduction.unity
+    guid: f6ba59ec3f6e5604a96abcff0e5083f2
+  - enabled: 1
+    path: Assets/Scenes/Music.unity
+    guid: 76c8c074674759b439bcf2a4383986e4
+  - enabled: 1
+    path: Assets/Scenes/Scope.unity
+    guid: 5a711ba412e18d046b2adf8421a6ed6e
+  - enabled: 1
+    path: Assets/Scenes/Startup.unity
+    guid: c7cc3dba19c15a64d8c2b8340d0c5733
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 2d722c8f857d53b4d864aa509818a47c
   m_configObjects: {}

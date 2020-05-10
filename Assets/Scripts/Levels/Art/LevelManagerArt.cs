@@ -6,6 +6,7 @@ using Levels.Coding;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManagerArt : LevelManagerBase
@@ -97,8 +98,7 @@ public class LevelManagerArt : LevelManagerBase
 
                 if (result.isDone)
                 {
-                    // todo: next scene
-                    Debug.Log("Got to next scene");
+                    SceneManager.LoadScene("Coding");
                 }
                 break;
             default:

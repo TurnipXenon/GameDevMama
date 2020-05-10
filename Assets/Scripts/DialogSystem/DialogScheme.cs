@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ScriptableObjects;
+using UnityEngine;
 
 namespace DialogSystem
 {
@@ -44,6 +45,14 @@ namespace DialogSystem
         }
 
         protected abstract Result BodyTryUsing(PlayerData playerData, CodingMamaCharacter characterData);
+
+        public void ApplyCharacter(CodingMamaCharacter characterData)
+        {
+            foreach (var VARIABLE in dialogGroupList)
+            {
+                VARIABLE.ApplyCharacter(characterData);
+            }
+        }
     }
 
     [Serializable]
@@ -83,6 +92,13 @@ namespace DialogSystem
             {
                 dialog.ApplyCharacter(characterData);
             }
+        }
+
+        public void AddLine(string text)
+        {
+            Dialog newDialog = new Dialog();
+            newDialog.SetText(text);
+            dialogList.Add(newDialog);
         }
     }
 }

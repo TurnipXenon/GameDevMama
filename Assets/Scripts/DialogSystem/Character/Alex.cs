@@ -87,6 +87,7 @@ namespace DialogSystem.Character
             foreach (var VARIABLE in dialogSchemeList)
             {
                 VARIABLE.RestartValue();
+                VARIABLE.ApplyCharacter(this);
             }
         }
         

@@ -8,6 +8,7 @@ using Levels.Music;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManagerMusic : LevelManagerBase
@@ -70,6 +71,7 @@ public class LevelManagerMusic : LevelManagerBase
             {
                 _state = State.Result;
                 playerData.SetMusicGrade(gradeList);
+                _audioManager.TryPlay();
 
                 _currentDialog = resultDialog;
                 _currentDialog.ApplyCharacter(_characterData);
@@ -148,8 +150,7 @@ public class LevelManagerMusic : LevelManagerBase
 
                 if (result.isDone)
                 {
-                    // todo: next scene
-                    Debug.Log("Got to next scene");
+                    SceneManager.LoadScene("Art");
                 }
                 break;
             default:
