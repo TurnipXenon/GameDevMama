@@ -1,25 +1,24 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using DialogSystem;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public abstract class CodingMamaCharacter : ScriptableObject
+namespace ScriptableObjects
 {
-    public String name;
-    public Sprite sprite;
-
-    
-    [NonSerialized]
-    protected int index = 0;
-    [NonSerialized]
-    protected int state = 0;
-    
-    public abstract Result Interact(PlayerData playerData);
-
-    public void RestartValues()
+    public abstract class CodingMamaCharacter : ScriptableObject
     {
-        index = 0;
-        state = 0;
+        public String name;
+        public Sprite sprite;
+    
+        public abstract Result Interact(PlayerData playerData);
+
+        public void RestartValues()
+        {
+            RestartValuesHook();
+        }
+
+        public virtual void RestartValuesHook()
+        {
+        }
     }
 }

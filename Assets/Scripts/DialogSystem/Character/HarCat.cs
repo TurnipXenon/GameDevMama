@@ -1,63 +1,103 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Dialog/HarCat", order = 1)]
-public class HarCat : CodingMamaCharacter
+namespace DialogSystem.Character
 {
-    public List<Dialog> defaultLine = new List<Dialog>();
-    public List<Dialog> introduction = new List<Dialog>();
-
-    public override Result Interact(PlayerData playerData)
+    [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Dialog/HarCat", order = 1)]
+    public class HarCat : CodingMamaCharacter
     {
-        Result result = ResultFactory.CreateEndingResult();
-        
-        switch (playerData.enumStage)
+        public RecruitmentDialogScheme recruitmentDialogScheme = new RecruitmentDialogScheme();
+
+        private List<DialogScheme> dialogSchemeList = new List<DialogScheme>();
+
+        [Serializable]
+        public class RecruitmentDialogScheme : DialogScheme
         {
-            case EnumStage.Recruitment:
-                List<Dialog> currentDialog = defaultLine;
-                Debug.Log("State: " + state);
+            public DialogGroup defaultLine = new DialogGroup();
+            public DialogGroup introduction = new DialogGroup();
+            [NonSerialized]
+            private State state = State.Introduction;
+        
+            private enum State
+            {
+                Introduction,
+                DefaultLine
+            }
+        
+            protected override Result BodyTryUsing(PlayerData playerData)
+            {
+                DialogGroup currentDialog = defaultLine;
+            
                 switch (state)
                 {
-                    case 0:
+                    case State.Introduction:
                         currentDialog = introduction;
                         break;
                 }
+                
+                Result result = currentDialog.Display(playerData);
 
-                if (index < currentDialog.Count)
+                if (result.isDone)
                 {
-                    playerData.dialogManager.Show();
-                    playerData.dialogManager.DisplayDialog(currentDialog[index]);
-                    result = ResultFactory.CreateChattingResult();
-                    index++;
-                }
-                else
-                {
-                    result = ResultFactory.CreateEndingResult();
                     playerData.dialogManager.Hide();
 
                     switch (state)
                     {
-                        case 0:
-                            state = 1;
+                        case State.Introduction:
+                            state = State.DefaultLine;
+                            break;
+                        default:
+                            defaultLine.RestartValue();
                             break;
                     }
                 }
                 
-                break;
-            
-            default:
-                Debug.LogWarning("State not yet implemented");
-                break;
-        }
+                return result;
+            }
 
-        if (result.isDone)
+            public override void RestartValueInit()
+            {
+                dialogGroupList = new List<DialogGroup>()
+                {
+                    defaultLine,
+                    introduction
+                };
+
+                state = State.Introduction;
+            }
+        }
+    
+        public override void RestartValuesHook()
         {
-            index = 0;
-        }
+            dialogSchemeList = new List<DialogScheme>()
+            {
+                recruitmentDialogScheme
+            };
 
-        return result;
+            foreach (var VARIABLE in dialogSchemeList)
+            {
+                VARIABLE.RestartValue();
+            }
+        }
+        
+        public override Result Interact(PlayerData playerData)
+        {
+            Result result = ResultFactory.CreateEndingResult();
+
+            foreach (var variable in dialogSchemeList)
+            {
+                result = variable.TryUsing(playerData.enumStage, playerData);
+
+                if (result.isAnActiveResponse)
+                {
+                    break;
+                }
+            }
+
+            return result;
+        }
     }
 }
