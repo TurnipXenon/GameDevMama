@@ -18,7 +18,8 @@ public class PlayerData : ScriptableObject
     [Header("Variable end game results")] 
     public float scopeResult;
     public List<CodingMamaCharacter> teamMemberList;
-    
+    public int bugKillCount;
+    public int remainingBugCount;
     
     private Random _random;
 
@@ -52,5 +53,10 @@ public class PlayerData : ScriptableObject
     public void SetScopeResult(float argScopeResult)
     {
         scopeResult = argScopeResult;
+    }
+
+    public void AddBugKill()
+    {
+        bugKillCount++;
     }
 }
