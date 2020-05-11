@@ -2983,7 +2983,7 @@ MonoBehaviour:
   minDotSpeed: 1
   minScale: 0.1
   scaleAllowance: 0.6
-  speedAllowance: 37
+  speedAllowance: 29
   playerAvatar: {fileID: 716101078}
   beginningDialog:
     dialogList:

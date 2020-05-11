@@ -217,7 +217,7 @@ public class EndingManager : LevelManagerBase
             
             yield return new WaitForSeconds(dialogListDelay);
         }
-        yield return new WaitForSeconds(dialogListDelay * 4);
+        yield return new WaitForSeconds(dialogListDelay * 2);
 
         _state = State.Result;
         

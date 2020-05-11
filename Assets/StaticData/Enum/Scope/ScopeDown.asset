@@ -18,3 +18,15 @@ MonoBehaviour:
   - text: I'm not familiar with Unauthentic Engine. Maybe we should scope down. Let's
       try Itch. Wait a sec...
     value: 1
+  - text: Let's make something simple! Like roll a ball!
+    value: 3
+  - text: "Please don't dream big!\t"
+    value: 5
+  - text: Kill your babies :))
+    value: 2
+  - text: I like you're idea but we only need 10% of it.
+    value: 3
+  - text: I say no.
+    value: 4
+  - text: Do you honestly think that we can do that?
+    value: 4
