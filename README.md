@@ -1,7 +1,7 @@
 # Game Jam Mama Trailer
 Cooking mama but with game development cycle in a game jam.
 
-This is a Out of Hibernation Game Jam entry made by Funny Fish Finance Group (aka just me)!
+This is an Out of Hibernation Game Jam entry made by Funny Fish Finance Group (aka just me)!
 
 [![GameJamMamaTrailer](https://img.youtube.com/vi/BoNGi6EAxio/0.jpg)](https://www.youtube.com/watch?v=BoNGi6EAxio)
 
