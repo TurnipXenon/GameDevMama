@@ -10,7 +10,7 @@ This is an Out of Hibernation Game Jam entry made by Funny Fish Finance Group (a
 ## General Instructions:
 
 * **Primary interaction**: Left click / Enter
-* **Secondary interaction**: Right click / Enter
+* **Secondary interaction**: Right click / Shift
 * **Movement**: WASD or Arrow keys
 
 ## 1st Stage: Recruitment
