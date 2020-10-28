@@ -36,3 +36,9 @@ This is an Out of Hibernation Game Jam entry made by Funny Fish Finance Group (a
 ## 5th Stage: Coding:
 
 * Use **movements** to step on the bugs
+
+# License
+
+[license_img]: https://i.creativecommons.org/l/by-nc/4.0/88x31.png "Creative Commons License"
+[![Creative Commons License][license_img]](https://creativecommons.org/licenses/by-nc/4.0/)  
+This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/)
