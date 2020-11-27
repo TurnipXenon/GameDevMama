@@ -5,7 +5,9 @@ This is an Out of Hibernation Game Jam entry made by Funny Fish Finance Group (a
 
 [![GameJamMamaTrailer](https://img.youtube.com/vi/BoNGi6EAxio/0.jpg)](https://www.youtube.com/watch?v=BoNGi6EAxio)
 
-[![ItchBadge](https://static.itch.io/images/badge.svg)](https://turnipxenon.itch.io/game-jam-mama)
+You can play the game on itch:
+<br>
+<a href="https://turnipxenon.itch.io/game-jam-mama"><img src="https://static.itch.io/images/badge.svg" height="64"></a>
 
 ## General Instructions:
 
