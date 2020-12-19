@@ -6,7 +6,7 @@ This is an Out of Hibernation Game Jam entry made by Funny Fish Finance Group (a
 [![GameJamMamaTrailer](https://img.youtube.com/vi/BoNGi6EAxio/0.jpg)](https://www.youtube.com/watch?v=BoNGi6EAxio)
 
 You can play the game on itch:
-<br>
+<br><br>
 <a href="https://turnipxenon.itch.io/game-jam-mama"><img src="https://static.itch.io/images/badge.svg" height="64"></a>
 
 ## General Instructions:
@@ -40,7 +40,10 @@ You can play the game on itch:
 * Use **movements** to step on the bugs
 
 # License
+## Code
+All custom scripts and custom scene files are licensed under an [MIT License](/CODE_LICENSE).
 
+## Art
 [license_img]: https://i.creativecommons.org/l/by-nc/4.0/88x31.png "Creative Commons License"
 [![Creative Commons License][license_img]](https://creativecommons.org/licenses/by-nc/4.0/)  
-This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/)
+All custom art assets are licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/)
